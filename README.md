@@ -3,7 +3,7 @@
 To create a new project, run:
 
 ```
-git clone https://github.com/johnpolacek/project-starter.git your-project-name
+git clone https://github.com/johnpolacek/next-project-starter-on-fire.git your-project-name
 cd your-project-name
 npm install
 ```

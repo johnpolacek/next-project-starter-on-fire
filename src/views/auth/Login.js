@@ -1,5 +1,5 @@
 import { Box, Text, Image } from "theme-ui"
-import LoginForm from "../forms/LoginForm"
+import LoginForm from "../../ui/forms/LoginForm"
 
 const Login = () => {
   return (

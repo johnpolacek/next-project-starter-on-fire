@@ -1,5 +1,5 @@
 import { Box, Text, Image } from "theme-ui"
-import SignUpForm from "../forms/SignUpForm"
+import SignUpForm from "../../ui/forms/SignUpForm"
 
 const SignUp = () => {
   return (

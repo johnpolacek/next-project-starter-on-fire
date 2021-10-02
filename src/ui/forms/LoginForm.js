@@ -56,7 +56,7 @@ const LoginForm = () => {
   }
 
   return (
-    <Box sx={{ maxWidth: "420px", mx: "auto" }}>
+    <Box sx={{ maxWidth: "360px", mx: "auto" }}>
       <Form
         onSubmit={handleSubmit}
         buttonText="Login"

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import reset from "../../../lib/firebase/reset"
+import reset from "../../../src/lib/firebase/auth/reset"
 import Form from "./Form"
 import { Label, Input } from "theme-ui"
 

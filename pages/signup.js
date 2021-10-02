@@ -1,5 +1,5 @@
 import Wrapper from "../src/layout/Wrapper"
-import SignUp from "../src/ui/app/SignUp"
+import SignUp from "../src/views/auth/SignUp"
 
 const SignUpPage = () => (
   <Wrapper
