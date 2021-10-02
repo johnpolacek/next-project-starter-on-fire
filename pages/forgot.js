@@ -7,7 +7,7 @@ const ForgotPage = () => {
   return (
     <Wrapper
       url="https://next-project-starter.vercel.app/"
-      title="Next Project Starter on Fire"
+      title={appConfig.name + " | Forgot Password"}
       description="Get your next React project up and running quickly with Next.js, Firebase and more."
       twitter="johnpolacek"
       imageUrl="https://next-project-starter-on-fire.vercel.app/project-logo.png"

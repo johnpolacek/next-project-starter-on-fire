@@ -7,9 +7,8 @@ const NavLink = ({ children, href, isCurrent }) => {
     <Link href={href} passHref>
       <A
         sx={{
-          py: [2, 3],
-          px: 3,
-          fontSize: 3,
+          p: 3,
+          fontSize: [1, 1, 3],
           fontWeight: 200,
           display: "inline-block",
           textDecoration: "none",

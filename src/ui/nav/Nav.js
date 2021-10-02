@@ -20,14 +20,14 @@ const Nav = () => {
       sx={{
         display: "flex",
         flexWrap: "wrap",
-        py: [2, 0],
+        pt: [2, 0],
         position: "relative",
       }}
     >
       <Box
         sx={{
-          width: ["100%", "50%"],
-          pl: [0, 3],
+          width: ["100%", "66.66%"],
+          pl: [0, 0, 3],
           textAlign: ["center", "left"],
         }}
       >
@@ -35,11 +35,11 @@ const Nav = () => {
       </Box>
       <Flex
         sx={{
-          width: ["100%", "50%"],
+          width: ["100%", "33.33%"],
           textAlign: ["center", "right"],
           pr: [0, 3],
           alignItems: "center",
-          justifyContent: "end",
+          justifyContent: ["center","end"],
         }}
       >
         <NavLink isCurrent={router.pathname === "/app"} href="/app">

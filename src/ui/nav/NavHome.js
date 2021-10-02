@@ -10,6 +10,7 @@ const NavHome = () => (
         color: "black",
         fontWeight: "inherit",
         m: 0,
+        pb: [2,0],
         fontSize: "inherit",
       }}
     >
@@ -22,11 +23,11 @@ const NavHome = () => (
           color: "primary",
         }}
       >
-        <Text as="span" sx={{ letterSpacing: "2px", display: "inline-block" }}>
+        <Text as="span" sx={{ letterSpacing: "2px", display: "inline-block", fontSize: [1, 0, 3] }}>
           &lt;
           <Image
             sx={{
-              height: "24px",
+              height: ["16px","16px","24px"],
               position: "relative",
               left: "-3px",
             }}
@@ -36,7 +37,7 @@ const NavHome = () => (
           /&gt;
         </Text>
       </Text>
-      <Text as="span">Next Project Starter on Fire</Text>
+      <Text as="span" sx={{fontSize: [1, 0, 3], fontWeight: 200}}>Next Project Starter on Fire</Text>
     </Text>
   </NavLink>
 )

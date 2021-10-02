@@ -7,7 +7,7 @@ const GithubLink = () => (
     title="Go to Project on Github"
     sx={{
       display: "inline-block",
-      px: [2, 2, 2, 2, 3],
+      px: [3],
       position: "relative",
       top: "2px",
       opacity: 0.8,
