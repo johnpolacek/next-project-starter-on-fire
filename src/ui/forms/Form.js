@@ -21,6 +21,7 @@ const Form = ({
     // if the controller had an error, allow submit after error is fixed
     // also if it was successful, allow new form submit
     setIsSubmitting(false)
+    setErrorMessage(error ? error : "")
   }, [error, success])
 
   const handleSubmit = async (e) => {
@@ -37,12 +38,6 @@ const Form = ({
 
   const disabled = isSubmitting || (typeof enabled !== "undefined" && !enabled)
 
-  const ErrorMessage = (props) => (
-    <Text id={id} as="p" sx={{ pb: 3, maxWidth: "300px" }} color="red">
-      {children}
-    </Text>
-  )
-
   return (
     <Box id={id} as="form" onSubmit={handleSubmit}>
       {heading && (
@@ -51,9 +46,15 @@ const Form = ({
         </Text>
       )}
       {children}
-      {errorMessage !== "" && <ErrorMessage children={{ errorMessage }} />}
       {errorMessage !== "" && (
-        <ErrorMessage id={id + "ErrorMessage"} children={errorMessage} />
+        <Text
+          className="error-message"
+          as="p"
+          sx={{ pb: 3, textAlign: "left" }}
+          color="red"
+        >
+          {errorMessage}
+        </Text>
       )}
       {typeof onCancel === "function" ? (
         <Flex>

@@ -38,9 +38,19 @@ const ResetPasswordForm = () => {
           </Heading>
         </Box>
       ) : (
-        <Form onSubmit={handleSubmit} heading="Reset Password" buttonText="Save Password" id="ResetPasswordForm">
+        <Form
+          onSubmit={handleSubmit}
+          heading="Reset Password"
+          buttonText="Save Password"
+          id="ResetPasswordForm"
+        >
           <Label htmlFor="password">New Password</Label>
-          <Input name="password" onChange={(e) => setPassword(e.target.value)} value={password} type="password" />
+          <Input
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            type="password"
+          />
         </Form>
       )}
     </Flex>

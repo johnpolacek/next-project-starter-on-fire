@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import Router from "next/router"
 import Link from "next/link"
-import firebase from "firebase/app"
-import "firebase/auth"
 import initFirebase from "../../lib/firebase/auth/initFirebase"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 import { Box, Text, Label, Input, Checkbox } from "theme-ui"
 import Form from "./Form"
 
 initFirebase()
+const auth = getAuth()
 
 const SignupLink = () => (
   <Text as="p" sx={{ pt: 4, width: "100%" }}>
@@ -24,11 +24,9 @@ const LoginForm = () => {
   const [error, setError] = useState("")
 
   const handleSubmit = async () => {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        var user = firebase.auth().currentUser
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        var user = userCredential.user
         if (user) {
           fetch("/api/login", {
             method: "POST",
@@ -37,7 +35,7 @@ const LoginForm = () => {
             credentials: "same-origin",
             body: JSON.stringify({ user }),
           }).then(() => {
-            Router.push("/")
+            Router.push("/app")
           })
         } else {
           setError("Not able to sign in")

@@ -1,9 +1,10 @@
 import { Link as A } from "theme-ui"
 import Link from "next/link"
 
-const ButtonLink = ({ href, children, bg, color, width }) => (
+const ButtonLink = ({ href, children, bg, color, width, id }) => (
   <Link href={href}>
     <A
+      id={id}
       sx={{
         textDecoration: "none",
         fontSize: 2,

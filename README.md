@@ -63,6 +63,8 @@ node ./src/lib/firebase/admin/_scratchpad.js
 
 First, you will need to enable authentication on your Firebase project. Choose the email/password as your Sign-in Provider. You can set up other providers in the future. Also, add your production domain to the authorized domains if you know it, otherwise remember to do it in the future once you are ready to deploy.
 
+See the [Firebase Authentication on Websites Docs](https://firebase.google.com/docs/auth/web/start#web-version-9) for more info.
+
 
 ## Other Project Settings
 
@@ -91,24 +93,34 @@ Edit global styles in `src/layout/Styles.js`.
 
 Style components using Theme UI’s [sx prop](https://theme-ui.com/sx-prop) or use its [built-in components](https://theme-ui.com/components). You can also drop in components from any [styled-system](https://styled-system.com/) compatible component framework, such as [Chakra UI](https://chakra-ui.com/). For more info, refer to the [Theme UI docs](https://theme-ui.com/theming).
 
+## Example App
+
+The example app is an Emoji Picker. If you are a logged in user, you can pick an emoji and change it if you’ve already picked one. Everyone can see all the Emojis that are currently picked by the users.
+
 ## Tests
 
 This project uses [Cypress](https://www.cypress.io/) for testing. Tests have been written for the landing page, docs and app.
 
 Expand, modify or delete these tests in `cypress/integration` folder. A custom command written for testing the example App can be found in `cypress/support/commands.js`
 
-To run tests:
+To run tests in headless mode:
 
 ```
 npm run test
 ```
 
+To launch Cypress and run tests in a browser:
+```
+npm run cypress
+```
+
+Note: these tests include setup and teardown scripts that connect to Firebase and also require the admin sdk json file to be located at `src/lib/firebase/adminsdk.json`.
+
+
 ## Deploy
 
-The deploy script in `package.json` will run tests, push to master then deploy to [now](https://github.com/zeit/now).
+The deploy script in `package.json` will run tests, push to main. If you use a service like [Vercel](https://vercel.com), you can set up automatic deployments.
 
 ```
 npm run deploy
 ```
-
-The first time your run the script you will need to set up your [zeit](https://zeit.co) account and configure your project for deployment.

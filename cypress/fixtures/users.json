@@ -1,0 +1,15 @@
+{
+  "new": {
+    "firstName": "Jack",
+    "lastName": "Grant",
+    "email": "new@email.com",
+    "password": "newUser1!"
+  },
+  "existing": {
+    "id": "fOWhPr5YRITk0BeOSIOqnBGsxo72",
+    "firstName": "Emily",
+    "lastName": "John",
+    "email": "existing@email.com",
+    "password": "existingUser1!"
+  }
+}

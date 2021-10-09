@@ -39,7 +39,7 @@ const Nav = () => {
           textAlign: ["center", "right"],
           pr: [0, 3],
           alignItems: "center",
-          justifyContent: ["center","end"],
+          justifyContent: ["center", "end"],
         }}
       >
         <NavLink isCurrent={router.pathname === "/app"} href="/app">

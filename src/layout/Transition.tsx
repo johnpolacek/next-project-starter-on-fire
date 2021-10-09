@@ -1,8 +1,11 @@
-import React from "react"
 import { Box } from "theme-ui"
 import { useState, useEffect } from "react"
 
-const TransitionLayout = ({ children }) => {
+type Props = {
+  children: React.ReactNode
+}
+
+const TransitionLayout = ({ children }: Props) => {
   const [displayChildren, setDisplayChildren] = useState(children)
   const [transitionStage, setTransitionStage] = useState("fadeOut")
   useEffect(() => {
@@ -32,4 +35,4 @@ const TransitionLayout = ({ children }) => {
   )
 }
 
-export default React.memo(TransitionLayout)
+export default TransitionLayout

@@ -1,7 +1,22 @@
-import React from "react"
 import Head from "next/head"
 
-const DocHead = ({ title, description, url, imageUrl, imageAlt, twitter }) => (
+type Props = {
+  title: string
+  description: string
+  url: string
+  imageUrl: string
+  imageAlt: string
+  twitter: string
+}
+
+const DocHead = ({
+  title,
+  description,
+  url,
+  imageUrl,
+  imageAlt,
+  twitter,
+}: Props) => (
   <>
     <Head>
       <title>{title}</title>
@@ -27,4 +42,4 @@ const DocHead = ({ title, description, url, imageUrl, imageAlt, twitter }) => (
   </>
 )
 
-export default React.memo(DocHead)
+export default DocHead

@@ -4,7 +4,6 @@ import Router from "next/router"
 import Link from "next/link"
 import initFirebase from "../../lib/firebase/auth/initFirebase"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
-import { getDatabase, ref, child, get } from "firebase/database"
 import { Flex, Box, Text, Label, Input, Checkbox } from "theme-ui"
 import Form from "./Form"
 
@@ -35,32 +34,40 @@ const SignUpForm = () => {
 
   const handleSubmit = async () => {
     if (checked) {
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          const user = userCredential.user
-          console.log("Created User", user)
-          fetch("/api/login", {
-            method: "POST",
-            // eslint-disable-next-line no-undef
-            headers: new Headers({ "Content-Type": "application/json" }),
-            credentials: "same-origin",
-            body: JSON.stringify({
-              user: { uid: user.uid, email, firstName, lastName },
-            }),
-          }).then(() => {
-            setCookie(null, "uid", user.uid, {
-              maxAge: 30 * 24 * 60 * 60,
-              path: "/",
+      fetch("/api/signup", {
+        method: "POST",
+        // eslint-disable-next-line no-undef
+        headers: new Headers({ "Content-Type": "application/json" }),
+        credentials: "same-origin",
+        body: JSON.stringify({ email, firstName, lastName, password }),
+      }).then((res) => {
+        res.json().then((data) => {
+          console.log(data)
+          if (data.result && data.result === "success" && data.uid) {
+            fetch("/api/login", {
+              method: "POST",
+              // eslint-disable-next-line no-undef
+              headers: new Headers({ "Content-Type": "application/json" }),
+              credentials: "same-origin",
+              body: JSON.stringify({
+                user: { uid: data.uid, email, firstName, lastName },
+              }),
+            }).then(() => {
+              setCookie(null, "uid", data.uid, {
+                maxAge: 30 * 24 * 60 * 60,
+                path: "/",
+              })
+              Router.push("/app")
             })
-            window.location.reload()
-          })
+          } else {
+            setErrorMessage(data.message || "Sorry there was an error")
+          }
         })
-        .catch((error) => {
-          console.log(error)
-          setErrorMessage(error.message)
-        })
+      })
     } else {
-      setError("Please agree to the terms and conditions to create an account.")
+      setErrorMessage(
+        "Please agree to the terms and conditions to create an account."
+      )
     }
   }
 
@@ -126,7 +133,11 @@ const SignUpForm = () => {
               color: "#777",
             }}
           >
-            <Checkbox onChange={onCheck} checked={checked} />
+            <Checkbox
+              required="required"
+              onChange={onCheck}
+              checked={checked}
+            />
             <Box sx={{ pt: "2px" }}>I agree to the terms and conditions</Box>
           </Label>
         </Box>

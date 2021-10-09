@@ -16,17 +16,18 @@ try {
 
 let db = admin.firestore()
 
-const readItems = async (id) => {
+const readEmojis = async (id) => {
   try {
-    const ref = db.collection("items")
-    const snapshot = await db.collection("items").get()
+    // const ref = db.collection("items")
+    // const snapshot = await db.collection("items").get()
 
-    const items = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+    // const items = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
 
-    return { items }
+    // return { items }
+    return { emojis: "go here" }
   } catch (error) {
     return { result: "error", error }
   }
 }
 
-module.exports = readItems
+module.exports = readEmojis

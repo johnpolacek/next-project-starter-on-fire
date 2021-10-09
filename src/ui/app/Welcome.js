@@ -10,12 +10,18 @@ const Welcome = () => (
       An account is required to use the app. Please sign up or login.
     </Text>
     <Box sx={{ py: 3 }}>
-      <ButtonLink href="/signup" width="272px">
+      <ButtonLink id="SignupButton" href="/signup" width="272px">
         Create New Account
       </ButtonLink>
     </Box>
     <Box sx={{ py: 3 }}>
-      <ButtonLink href="/login" width="272px" bg="secondary" passHref>
+      <ButtonLink
+        id="LoginButton"
+        href="/login"
+        width="272px"
+        bg="secondary"
+        passHref
+      >
         Login to Your Account
       </ButtonLink>
     </Box>
