@@ -1,11 +1,12 @@
-import readEmojis from "../../../src/lib/firebase/admin/readEmojis"
+import readEmoji from "../../../src/lib/firebase/admin/readEmoji"
+import readAllEmojis from "../../../src/lib/firebase/admin/readAllEmojis"
 
 export default async (req, res) => {
-  const debug = true
-
   if (req.method === "GET") {
     try {
-      const data = await readEmojis()
+      const data = req.query.uid
+        ? await readEmoji(req.query.uid)
+        : await readAllEmojis()
       res.status(200).json(data)
     } catch (e) {
       console.log(`readEmojis: Error: ${e.message}`)

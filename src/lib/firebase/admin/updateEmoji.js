@@ -16,18 +16,19 @@ try {
 
 let db = admin.firestore()
 
-const readEmojis = async (id) => {
-  try {
-    // const ref = db.collection("items")
-    // const snapshot = await db.collection("items").get()
-
-    // const items = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-
-    // return { items }
-    return { emojis: "go here" }
-  } catch (error) {
-    return { result: "error", error }
-  }
+const updateEmoji = async (uid, emoji) => {
+  return admin
+    .firestore()
+    .collection("users")
+    .doc(uid)
+    .set({ emoji, updated: Date.now() })
+    .then(() => {
+      return { result: "success" }
+    })
+    .catch(function (error) {
+      console.error("Error could not update emoji", error)
+      return { result: "error", error }
+    })
 }
 
-module.exports = readEmojis
+export default updateEmoji

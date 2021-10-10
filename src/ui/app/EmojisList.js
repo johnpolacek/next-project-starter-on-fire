@@ -1,10 +1,9 @@
-import React, { useMemo, useState, useContext } from "react"
+import React, { useMemo, useState } from "react"
 import useIsMounted from "../../hooks/useIsMounted"
-import { EmojisContext } from "../../context/EmojisContext"
-import { Box, Text, Image } from "theme-ui"
+import { Flex, Box, Text, Image } from "theme-ui"
 
 const EmojisList = () => {
-  const { emojis, setEmojis } = useContext(EmojisContext)
+  const [emojis, setEmojis] = useState(null)
 
   const isMounted = useIsMounted()
   useMemo(() => {
@@ -18,7 +17,9 @@ const EmojisList = () => {
         .then((response) => response.json())
         .then((data) => {
           console.log("/api/emoji/read", data)
-          setEmojis([{ id: 1, name: data.emojis }])
+          if (data.emojis) {
+            setEmojis(data.emojis)
+          }
         })
     }
   }, [isMounted])
@@ -31,7 +32,25 @@ const EmojisList = () => {
       >
         Current State of the Emojis...
       </Text>
-      <Box>Emojis will go here...</Box>
+      <Flex sx={{ justifyContent: "center" }}>
+        {emojis &&
+          emojis.map((emoji) => (
+            <Flex
+              sx={{
+                fontSize: 6,
+                width: "96px",
+                height: "96px",
+                m: 2,
+                border: "1px solid",
+                borderColor: "lite",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {emoji}
+            </Flex>
+          ))}
+      </Flex>
     </Box>
   )
 }
