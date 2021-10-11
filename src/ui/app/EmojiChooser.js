@@ -1,12 +1,14 @@
-import React, { useState, useMemo } from "react"
+import React, { useState, useMemo, useContext } from "react"
 import useIsMounted from "../../hooks/useIsMounted"
 import dynamic from "next/dynamic"
 import { Flex, Box, Text } from "theme-ui"
+import { EmojisContext } from "../../context/EmojisContext"
 
 const Picker = dynamic(() => import("emoji-picker-react"), { ssr: false })
 
 const EmojiChooser = ({ user }) => {
   const [emoji, setEmoji] = useState(null)
+  const { emojis, setEmojis } = useContext(EmojisContext)
 
   const isMounted = useIsMounted()
   useMemo(() => {
@@ -42,6 +44,7 @@ const EmojiChooser = ({ user }) => {
         console.log(err)
       })
     setEmoji(emojiObject.emoji)
+    setEmojis([emojiObject.emoji, ...emojis])
   }
 
   return (

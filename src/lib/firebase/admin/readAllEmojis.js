@@ -22,10 +22,8 @@ const readAllEmojis = async (uid) => {
     const ref = db.collection("users")
     const snapshot = await ref.get()
     snapshot.forEach((doc) => {
-      console.log("doc.data().emoji", doc.data().emoji)
       emojis.push(doc.data().emoji)
     })
-    console.log("emojis", { emojis })
     return { emojis }
   } catch (error) {
     return { result: "error", error }

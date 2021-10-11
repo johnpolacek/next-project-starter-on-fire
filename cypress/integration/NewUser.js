@@ -7,7 +7,6 @@ describe("New User", function () {
   })
 
   it("can sign up for account", function () {
-    // sign up for an account
     cy.fixture("users").then((users) => {
       cy.visit("/app")
       cy.get("#SignupButton", { timeout: 10000 }).click()
@@ -23,7 +22,6 @@ describe("New User", function () {
   })
 
   it("cannot sign up with existing account email", function () {
-    // sign up for an account
     cy.fixture("users").then((users) => {
       cy.visit("/app")
       cy.get("#SignupButton", { timeout: 10000 }).click()
@@ -42,7 +40,6 @@ describe("New User", function () {
   })
 
   it("needs to agree to terms and conditions", function () {
-    // sign up for an account
     cy.fixture("users").then((users) => {
       cy.visit("/app")
       cy.get("#SignupButton", { timeout: 10000 }).click()
@@ -57,7 +54,6 @@ describe("New User", function () {
   })
 
   it("needs account to choose emojis", function () {
-    // sign up for an account
     cy.visit("/app")
     cy.get("#LoginButton", { timeout: 10000 }).should("be.visible")
     cy.get("#SignupButton", { timeout: 10000 }).should("be.visible")

@@ -1,9 +1,10 @@
-import React, { useMemo, useState } from "react"
+import { EmojisContext } from "../../context/EmojisContext"
+import React, { useMemo, useState, useContext } from "react"
 import useIsMounted from "../../hooks/useIsMounted"
 import { Flex, Box, Text, Image } from "theme-ui"
 
 const EmojisList = () => {
-  const [emojis, setEmojis] = useState(null)
+  const {emojis, setEmojis} = useContext(EmojisContext)
 
   const isMounted = useIsMounted()
   useMemo(() => {
@@ -32,24 +33,21 @@ const EmojisList = () => {
       >
         Current State of the Emojis...
       </Text>
-      <Flex sx={{ justifyContent: "center" }}>
-        {emojis &&
-          emojis.map((emoji) => (
-            <Flex
-              sx={{
-                fontSize: 6,
-                width: "96px",
-                height: "96px",
-                m: 2,
-                border: "1px solid",
-                borderColor: "lite",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              {emoji}
-            </Flex>
-          ))}
+      <Flex sx={{justifyContent: "center"}}>
+        {emojis && emojis.map((emoji) => (<Flex
+            sx={{
+              fontSize: 6,
+              width: "96px",
+              height: "96px",
+              m: 2,
+              border: "1px solid",
+              borderColor: "lite",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {emoji}
+          </Flex>))}
       </Flex>
     </Box>
   )

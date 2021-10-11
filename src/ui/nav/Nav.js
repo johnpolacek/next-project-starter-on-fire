@@ -12,8 +12,6 @@ const Nav = () => {
   const { user } = useContext(UserContext)
   const [showDropdown, setShowDropdown] = useState(false)
 
-  console.log("Nav user", user)
-
   return (
     <Box
       as="nav"

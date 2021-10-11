@@ -1,4 +1,5 @@
 import { useEffect, useContext } from "react"
+import { EmojisProvider } from "../context/EmojisContext"
 import { UserContext } from "../context/UserContext"
 import { Box } from "theme-ui"
 import EmojisList from "../ui/app/EmojisList"
@@ -22,8 +23,11 @@ const App = ({ user }) => {
       }}
     >
       <>
-        <EmojisList />
-        {user ? <EmojiChooser user={user} /> : <Welcome />}
+        {!user && <Welcome />}
+        <EmojisProvider>
+          <EmojisList />
+          {user && <EmojiChooser user={user} />}
+        </EmojisProvider>
       </>
     </Box>
   )
