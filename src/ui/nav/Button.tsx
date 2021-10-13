@@ -1,6 +1,11 @@
 import { Button as Btn } from "theme-ui"
 
-const Button = ({ disabled, children }) => (
+type Props = {
+  children: React.ReactNode
+  disabled: boolean
+}
+
+const Button = ({ disabled, children }: Props) => (
   <Btn
     disabled={disabled}
     sx={{

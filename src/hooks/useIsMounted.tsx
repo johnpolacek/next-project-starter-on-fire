@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react"
 
 const useIsMounted = () => {
-  const [isMounted, setIsMounted] = useState(false)
+  const [isMounted, setIsMounted] = useState<boolean>(false)
   useEffect(() => {
     setIsMounted(true)
   }, [])

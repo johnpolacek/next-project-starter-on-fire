@@ -1,7 +1,16 @@
 import { Link as A } from "theme-ui"
 import Link from "next/link"
 
-const ButtonLink = ({ href, children, bg, color, width, id }) => (
+type Props = {
+  children: React.ReactNode
+  href: string
+  id: string
+  bg: string
+  width: string
+  color: string
+}
+
+const ButtonLink = ({ href, children, id, bg, width, color }: Props) => (
   <Link href={href}>
     <A
       id={id}

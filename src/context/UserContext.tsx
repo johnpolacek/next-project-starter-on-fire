@@ -1,6 +1,15 @@
 import React, { useState, createContext } from "react"
 
-const UserContext = createContext({})
+interface User {
+  uid: string
+  email: string
+}
+
+interface UserContextInterface {
+  user: User
+  setUser: (value: User) => void
+}
+const UserContext = createContext<UserContextInterface | null>(null)
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null)

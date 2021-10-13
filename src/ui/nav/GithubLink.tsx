@@ -17,7 +17,6 @@ const GithubLink = () => (
     }}
   >
     <svg
-      alt="Go to Project on Github"
       height="32"
       viewBox="0 0 16 16"
       version="1.1"

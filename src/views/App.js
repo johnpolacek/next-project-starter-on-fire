@@ -10,6 +10,7 @@ const App = ({ user }) => {
   const { setUser } = useContext(UserContext)
 
   useEffect(() => {
+    console.log(user)
     setUser(user ? user : false)
   }, [user])
 

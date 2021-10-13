@@ -1,6 +1,10 @@
 import React, { useState, createContext } from "react"
 
-const EmojisContext = createContext({})
+interface EmojisContextInterface {
+  emojis: string[]
+  setEmojis: (value: string[]) => void
+}
+const EmojisContext = createContext<EmojisContextInterface | null>(null)
 
 const EmojisProvider = ({ children }) => {
   const [emojis, setEmojis] = useState(null)

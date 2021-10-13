@@ -1,6 +1,6 @@
 import { Box } from "theme-ui"
 
-const Spinner = (props) => (
+const Spinner = () => (
   <Box
     sx={{
       mt: "-12px",

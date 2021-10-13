@@ -2,7 +2,15 @@ import React from "react"
 import { Link as A } from "theme-ui"
 import Link from "next/link"
 
-const AppLink = ({ children, href, bg, mode, disabled }) => (
+type Props = {
+  children: React.ReactNode
+  href: string
+  bg: string
+  mode: string
+  disabled: boolean
+}
+
+const AppLink = ({ children, href, bg, mode, disabled }: Props) => (
   <Link passHref href={disabled ? "#" : href}>
     <A
       sx={{

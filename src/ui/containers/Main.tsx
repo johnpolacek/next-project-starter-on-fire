@@ -1,6 +1,10 @@
 import { Box } from "theme-ui"
 
-const Main = ({ children }) => {
+type Props = {
+  children: React.ReactNode
+}
+
+const Main = ({ children }: Props) => {
   return (
     <Box
       as="main"
