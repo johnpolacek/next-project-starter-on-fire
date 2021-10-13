@@ -20,7 +20,7 @@
     "@types/node": "^16.10.2",
     "@types/react": "^17.0.26",
     "@types/react-dom": "^17.0.9",
-    "cypress": "^8.5.0",
+    "cypress": "^8.6.0",
     "emoji-picker-react": "^3.4.8",
     "firebase": "^9.1.1",
     "firebase-admin": "^9.12.0",
