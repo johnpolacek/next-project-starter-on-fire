@@ -6,10 +6,11 @@
     "password": "newUser1!"
   },
   "existing": {
-    "id": "fOWhPr5YRITk0BeOSIOqnBGsxo72",
+    "id": "2K9AjK7e8GdAoItczr35tPzAaUt1",
     "firstName": "Emily",
     "lastName": "John",
     "email": "existing@email.com",
-    "password": "existingUser1!"
+    "password": "existingUser1!",
+    "emoji": "😎"
   }
 }

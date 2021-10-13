@@ -2,7 +2,7 @@ import { Box, Text } from "theme-ui"
 import ButtonLink from "../../ui/nav/ButtonLink"
 
 const Welcome = () => (
-  <Box sx={{pt: 5}}>
+  <Box sx={{ pt: 5 }}>
     <Text as="h2" sx={{ py: 3, color: "primary" }}>
       Welcome to the Next Project Starter on Fire Example App
     </Text>

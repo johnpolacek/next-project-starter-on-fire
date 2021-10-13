@@ -72,6 +72,7 @@ const EmojiChooser = ({ user }) => {
             opacity: emoji ? 1 : 0,
             transition: "opacity 0.5s",
           }}
+          id="EmojiCurrent"
         >
           {emoji === "" ? "none" : emoji}
         </Flex>
