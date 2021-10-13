@@ -5,7 +5,6 @@ export default async (req, res) => {
 
   if (req.method === "POST") {
     const data = req.body
-    console.log("api/signup req.body", req.body)
 
     try {
       const createResponse = await createUser(data)
