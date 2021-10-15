@@ -1,6 +1,6 @@
 /* globals window */
 import firebase from "firebase/app"
-import "firebase/auth"
+import { getAuth, sendSignInLinkToEmail } from "firebase/auth"
 import appConfig from "../../../../app.config.js"
 
 const actionCodeSettings = {
@@ -11,10 +11,10 @@ const actionCodeSettings = {
   handleCodeInApp: true,
 }
 
+const auth = getAuth()
+
 const Reset = async (email) => {
-  return firebase
-    .auth()
-    .sendSignInLinkToEmail(email, actionCodeSettings)
+  return sendSignInLinkToEmail(auth, email, actionCodeSettings)
     .then(function () {
       // The link was successfully sent. Inform the user.
       // Save the email locally so you don't need to ask the user for it again

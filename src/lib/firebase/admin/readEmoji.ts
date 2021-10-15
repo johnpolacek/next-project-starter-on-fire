@@ -10,17 +10,17 @@ try {
     databaseAuthVariableOverride: {
       uid: "my-service-worker",
     },
-    storageBucket: "supportmyteam.appspot.com",
   })
 }
 
-let db = admin.firestore()
+
 
 type Props = {
   uid: string
 }
 
 const readEmoji = async ({uid}: Props) => {
+  let db = admin.firestore()
   try {
     const ref = db.collection("users").doc(uid)
     const doc = await ref.get()

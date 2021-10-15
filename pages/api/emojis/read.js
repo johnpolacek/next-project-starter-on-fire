@@ -5,7 +5,7 @@ export default async (req, res) => {
   if (req.method === "GET") {
     try {
       const data = req.query.uid
-        ? await readEmoji(req.query.uid)
+        ? await readEmoji({uid: req.query.uid})
         : await readAllEmojis()
       res.status(200).json(data)
     } catch (e) {

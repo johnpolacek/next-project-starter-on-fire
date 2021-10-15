@@ -2,7 +2,7 @@ describe("Existing User", function () {
   beforeEach(() => {
     // reset existing user test data
     cy.exec(
-      "export GOOGLE_APPLICATION_CREDENTIALS='./src/lib/firebase/admin/firebase-adminsdk.json' && node ./src/lib/firebase/test/setTestExistingUser.js",
+      "export GOOGLE_APPLICATION_CREDENTIALS='./src/lib/firebase/admin/firebase-adminsdk.json' && node ./src/lib/firebase/test/setTestExistingUser.ts",
       { failOnNonZeroExit: false }
     )
 

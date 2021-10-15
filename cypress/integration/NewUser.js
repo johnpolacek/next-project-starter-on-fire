@@ -1,7 +1,7 @@
 describe("New User", function () {
   beforeEach(() => {
     cy.exec(
-      "export GOOGLE_APPLICATION_CREDENTIALS='./src/lib/firebase/admin/firebase-adminsdk.json' && node ./src/lib/firebase/test/deleteTestUser.js",
+      "export GOOGLE_APPLICATION_CREDENTIALS='./src/lib/firebase/admin/firebase-adminsdk.json' && node ./src/lib/firebase/test/deleteTestUser.ts",
       { failOnNonZeroExit: false }
     )
   })
