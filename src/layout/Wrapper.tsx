@@ -3,6 +3,16 @@ import { ThemeProvider } from "theme-ui"
 import Layout from "./Layout"
 import Theme from "../ui/Theme"
 
+type Props = {
+  children: React.ReactNode
+  title: string
+  description: string
+  url: string
+  imageUrl: string
+  imageAlt: string
+  twitter: string
+}
+
 const Wrapper = ({
   title,
   description,

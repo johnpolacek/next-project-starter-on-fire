@@ -16,18 +16,19 @@ try {
 
 let db = admin.firestore()
 
-const readAllEmojis = async (uid) => {
+type Props = {
+  uid: string
+}
+
+const readEmoji = async ({uid}: Props) => {
   try {
-    let emojis = []
-    const ref = db.collection("users")
-    const snapshot = await ref.get()
-    snapshot.forEach((doc) => {
-      emojis.push(doc.data().emoji)
-    })
-    return { emojis }
+    const ref = db.collection("users").doc(uid)
+    const doc = await ref.get()
+    const emoji = doc.data().emoji
+    return { emoji }
   } catch (error) {
     return { result: "error", error }
   }
 }
 
-module.exports = readAllEmojis
+export default readEmoji

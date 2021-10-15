@@ -2,6 +2,12 @@ import React from "react"
 import { Link as A } from "theme-ui"
 import Link from "next/link"
 
+type Props = {
+  children: React.ReactNode
+  href: string
+  isCurrent: boolean
+}
+
 const NavLink = ({ children, href, isCurrent }) => {
   return (
     <Link href={href} passHref>

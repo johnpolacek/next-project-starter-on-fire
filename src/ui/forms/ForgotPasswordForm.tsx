@@ -3,12 +3,16 @@ import reset from "../../../src/lib/firebase/auth/reset"
 import Form from "./Form"
 import { Label, Input } from "theme-ui"
 
-const ForgotPasswordForm = (props) => {
+type Props = {
+  onComplete: Function
+}
+
+const ForgotPasswordForm = ({onComplete}: Props) => {
   const [email, setEmail] = useState("")
 
   const handleSubmit = async () => {
     await reset(email)
-    props.onComplete()
+    onComplete()
   }
 
   return (

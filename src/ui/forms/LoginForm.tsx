@@ -66,7 +66,7 @@ const LoginForm = () => {
         <Input
           name="email"
           type="email"
-          required="required"
+          required={true}
           onChange={(e) => {
             setEmail(e.target.value)
             setError("")
@@ -76,7 +76,7 @@ const LoginForm = () => {
         <Label htmlFor="password">Password</Label>
         <Input
           name="password"
-          required="required"
+          required={true}
           onChange={(e) => {
             setPassword(e.target.value)
             setError("")

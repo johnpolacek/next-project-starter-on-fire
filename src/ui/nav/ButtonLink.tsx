@@ -5,13 +5,13 @@ type Props = {
   children: React.ReactNode
   href: string
   id: string
-  bg: string
   width: string
-  color: string
+  bg?: string
+  color?: string
 }
 
 const ButtonLink = ({ href, children, id, bg, width, color }: Props) => (
-  <Link href={href}>
+  <Link href={href} passHref>
     <A
       id={id}
       sx={{

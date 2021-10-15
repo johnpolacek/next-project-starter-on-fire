@@ -87,7 +87,7 @@ const SignUpForm = () => {
               name="first"
               type="text"
               onChange={(e) => setFirstName(e.target.value)}
-              required="required"
+              required={true}
               value={firstName}
             />
           </Box>
@@ -97,7 +97,7 @@ const SignUpForm = () => {
               name="last"
               type="text"
               onChange={(e) => setLastName(e.target.value)}
-              required="required"
+              required={true}
               value={lastName}
             />
           </Box>
@@ -107,7 +107,7 @@ const SignUpForm = () => {
           name="email"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
-          required="required"
+          required={true}
           value={email}
         />
         <Label htmlFor="password">
@@ -121,7 +121,7 @@ const SignUpForm = () => {
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
-          required="required"
+          required={true}
         />
         <Box sx={{ pb: 4 }}>
           <Label
@@ -134,7 +134,7 @@ const SignUpForm = () => {
             }}
           >
             <Checkbox
-              required="required"
+              required={true}
               onChange={onCheck}
               checked={checked}
             />

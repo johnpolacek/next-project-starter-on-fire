@@ -4,7 +4,7 @@ import Router from "next/router"
 import appConfig from "../../../app.config"
 import ForgotPasswordForm from "../../ui/forms/ForgotPasswordForm"
 
-const ForgotPassword = (props) => {
+const ForgotPassword = () => {
   const [isSent, setIsSent] = useState(false)
 
   return (

@@ -2,6 +2,20 @@ import React, { useState, useEffect } from "react"
 import { Flex, Box, Card, Heading, Text, Button } from "theme-ui"
 import Spinner from "../graphics/Spinner"
 
+type Props = {
+  children: React.ReactNode
+  id: string
+  buttonText: string
+  onSubmit: Function
+  heading?: string
+  success?: boolean
+  onCancel?: React.MouseEventHandler<HTMLButtonElement>
+  hideButton?: boolean
+  error?: string
+  after?: React.ReactNode
+  enabled?: boolean
+}
+
 const Form = ({
   children,
   id,
@@ -13,7 +27,8 @@ const Form = ({
   error,
   heading,
   success,
-}) => {
+  onCancel
+}: Props) => {
   const [errorMessage, setErrorMessage] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
 

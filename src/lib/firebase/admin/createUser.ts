@@ -16,7 +16,14 @@ try {
 
 let db = admin.firestore()
 
-const createUser = async ({ email, firstName, lastName, password }) => {
+type Props = {
+  email: string
+  firstName: string
+  lastName: string
+  password: string
+}
+
+const createUser = async ({ email, firstName, lastName, password }: Props) => {
   try {
     return admin
       .auth()

@@ -1,6 +1,12 @@
 import { Box, Text, Link } from "theme-ui"
 
-const Feature = ({ href, title, benefits }) => (
+type Props = {
+  href: string
+  title: string
+  benefits: string[]
+}
+
+const Feature = ({ href, title, benefits }: Props) => (
   <Box
     sx={{
       width: ["100%", "50%", "33.33%"],

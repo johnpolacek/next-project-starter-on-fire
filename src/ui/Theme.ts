@@ -58,12 +58,10 @@ const Theme = {
     inner: "inset 0 2px 4px 0 rgba(0,0,0,0.06)",
     none: "none",
   },
-  forms: {
-    input: inputStyles,
-    select: inputStyles,
-    textArea: inputStyles,
-    label: { display: "block", textAlign: "left", pb: 1 },
-  },
+  input: inputStyles,
+  select: inputStyles,
+  textArea: inputStyles,
+  label: { display: "block", textAlign: "left", pb: 1 },
 }
 
 export default Theme

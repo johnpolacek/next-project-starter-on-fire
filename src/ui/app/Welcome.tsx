@@ -20,7 +20,6 @@ const Welcome = () => (
         href="/login"
         width="272px"
         bg="secondary"
-        passHref
       >
         Login to Your Account
       </ButtonLink>
