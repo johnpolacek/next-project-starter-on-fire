@@ -1,5 +1,5 @@
 /* globals window */
-import firebase from "firebase/app"
+import initFirebase from "./initFirebase"
 import { getAuth, sendSignInLinkToEmail } from "firebase/auth"
 import appConfig from "../../../../app.config.js"
 
@@ -11,6 +11,7 @@ const actionCodeSettings = {
   handleCodeInApp: true,
 }
 
+initFirebase()
 const auth = getAuth()
 
 const Reset = async (email) => {

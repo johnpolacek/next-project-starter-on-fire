@@ -121,6 +121,8 @@ Note: these tests include setup and teardown scripts that connect to Firebase an
 
 The deploy script in `package.json` will run tests, push to main. If you use a service like [Vercel](https://vercel.com), you can set up automatic deployments.
 
+You will need to set up each environment variable from `.env.local` for your project deployment.
+
 ```
 npm run deploy
 ```
