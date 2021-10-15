@@ -21,7 +21,7 @@ const EmojiChooser = ({ user }) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log("data", data)
+          if (data.result === 'error')
           setEmoji(data.emoji ? data.emoji : "")
         })
     }
@@ -39,7 +39,7 @@ const EmojiChooser = ({ user }) => {
       }),
     })
       .then(() => {
-        console.log("emoji updated")
+        // emoji was updated on firebase
       })
       .catch((err) => {
         console.log(err)

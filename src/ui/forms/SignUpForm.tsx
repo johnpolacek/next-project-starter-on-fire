@@ -42,7 +42,6 @@ const SignUpForm = () => {
         body: JSON.stringify({ email, firstName, lastName, password }),
       }).then((res) => {
         res.json().then((data) => {
-          console.log(data)
           if (data.result && data.result === "success" && data.uid) {
             fetch("/api/login", {
               method: "POST",

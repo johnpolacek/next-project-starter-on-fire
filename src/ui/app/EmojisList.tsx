@@ -17,7 +17,6 @@ const EmojisList = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log("/api/emoji/read", data)
           if (data.emojis) {
             setEmojis(data.emojis)
           }
