@@ -1,7 +1,7 @@
 describe("New User", function () {
   beforeEach(() => {
     cy.exec(
-      "export GOOGLE_APPLICATION_CREDENTIALS='./src/lib/firebase/admin/firebase-adminsdk.json' && node ./src/lib/firebase/test/deleteTestUser.ts",
+      "export GOOGLE_APPLICATION_CREDENTIALS='./src/lib/firebase/admin/firebase-adminsdk.json' && node ./src/lib/firebase/test/deleteTestUser.js",
       { failOnNonZeroExit: false }
     )
   })
@@ -17,7 +17,7 @@ describe("New User", function () {
       cy.get("input[name=password]").type(users.new.password)
       cy.get("#agreeTerms div").eq(0).click()
       cy.get("#SignupForm button").contains("Sign Up").click()
-      cy.get("#EmojiChooser", { timeout: 20000 }).should("be.visible")
+      cy.get("#EmojiChooser", { timeout: 40000 }).should("be.visible")
     })
   })
 

@@ -22,7 +22,9 @@ const readAllEmojis = async () => {
     const ref = db.collection("users")
     const snapshot = await ref.get()
     snapshot.forEach((doc) => {
-      emojis.push(doc.data().emoji)
+      if (doc.data().emoji) {
+        emojis.push(doc.data().emoji)
+      }
     })
     return { emojis }
   } catch (error) {

@@ -21,7 +21,6 @@ const EmojiChooser = ({ user }) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data.result === 'error')
           setEmoji(data.emoji ? data.emoji : "")
         })
     }
