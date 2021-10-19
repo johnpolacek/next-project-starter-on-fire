@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Box, Text, Button } from "theme-ui"
 import Router from "next/router"
-import appConfig from "../../../appConfig"
+import * as appConfig from "../../../appConfig.json"
 import ForgotPasswordForm from "../../ui/forms/ForgotPasswordForm"
 
 const ForgotPassword = () => {

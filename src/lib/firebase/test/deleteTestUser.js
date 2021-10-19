@@ -5,7 +5,7 @@
 const serviceAccount = require("../admin/adminsdk.json") // this file is downloaded from firebase and contains your project secrets - do not commit to source control
 const admin = require("firebase-admin")
 const testUsers = require("../../../../cypress/fixtures/users.json")
-const appConfig = require("../../../../appConfig")
+const appConfig = require("../../../../appConfig.json")
 
 const debug = true
 

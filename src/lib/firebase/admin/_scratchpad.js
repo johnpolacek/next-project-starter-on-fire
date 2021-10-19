@@ -3,7 +3,7 @@
 
 const serviceAccount = require("./adminsdk.json")
 const admin = require("firebase-admin")
-const appConfig = require("../../../../appConfig")
+const appConfig = require("../../../../appConfig.json")
 
 const debug = true
 

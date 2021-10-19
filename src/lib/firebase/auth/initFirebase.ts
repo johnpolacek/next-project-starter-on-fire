@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import appConfig from "../../../../appConfig"
+import * as appConfig from "../../../../appConfig.json"
 
 const firebaseConfig = {
   apiKey: appConfig.FIREBASE_API_KEY,

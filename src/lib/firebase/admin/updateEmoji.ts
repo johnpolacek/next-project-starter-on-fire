@@ -1,6 +1,6 @@
 const admin = require("firebase-admin")
 const serviceAccount = JSON.parse(process.env.NEXT_FIREBASE_ADMIN_SDK)
-const appConfig = require("../../../../appConfig")
+const appConfig = require("../../../../appConfig.json")
 
 try {
   admin.instanceId()

@@ -1,6 +1,6 @@
 import Wrapper from "../src/layout/Wrapper"
 import Docs from "../src/views/Docs"
-import appConfig from "../appConfig"
+import * as appConfig from "../appConfig.json"
 
 // Note: It is recommended for SEO that you have a different title and description for each page
 
