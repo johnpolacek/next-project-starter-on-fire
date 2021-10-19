@@ -1,19 +1,18 @@
 const admin = require("firebase-admin")
 const serviceAccount = JSON.parse(process.env.NEXT_FIREBASE_ADMIN_SDK)
+const appConfig = require("../../../../appConfig")
 
 try {
   admin.instanceId()
 } catch (err) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: process.env.FIREBASE_DATABASE_URL,
+    databaseURL: appConfig.FIREBASE_DATABASE_URL,
     databaseAuthVariableOverride: {
       uid: "my-service-worker",
     },
   })
 }
-
-
 
 type Props = {
   uid: string

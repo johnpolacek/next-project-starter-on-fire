@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app"
+import appConfig from "../../../../appConfig"
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  apiKey: appConfig.FIREBASE_API_KEY,
+  authDomain: appConfig.FIREBASE_AUTH_DOMAIN,
+  databaseURL: appConfig.FIREBASE_DATABASE_URL,
+  projectId: appConfig.FIREBASE_PROJECT_ID,
+  storageBucket: appConfig.FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  appId: appConfig.FIREBASE_APP_ID,
 }
 
 const InitFirebase = () => {

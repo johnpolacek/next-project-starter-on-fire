@@ -1,6 +1,6 @@
 import Wrapper from "../src/layout/Wrapper"
 import Login from "../src/views/auth/Login"
-import appConfig from "../app.config"
+import appConfig from "../appConfig"
 
 const LoginPage = () => (
   <Wrapper

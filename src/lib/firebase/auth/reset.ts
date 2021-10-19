@@ -1,7 +1,7 @@
 /* globals window */
 import initFirebase from "./initFirebase"
 import { getAuth, sendSignInLinkToEmail } from "firebase/auth"
-import appConfig from "../../../../app.config.js"
+import appConfig from "../../../../appConfig"
 
 const actionCodeSettings = {
   // URL you want to redirect back to. The domain (www.example.com) for this

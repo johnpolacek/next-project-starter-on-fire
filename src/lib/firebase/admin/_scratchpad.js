@@ -3,18 +3,21 @@
 
 const serviceAccount = require("./adminsdk.json")
 const admin = require("firebase-admin")
+const appConfig = require("../../../../appConfig")
 
 const debug = true
 
 console.log("Scratch Pad")
+
+console.log("appConfig", appConfig)
 
 try {
   admin.instanceId()
 } catch (err) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: process.env.NEXT_FIREBASE_DATABASE_URL,
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    databaseURL: appConfig.FIREBASE_DATABASE_URL,
+    storageBucket: appConfig.FIREBASE_STORAGE_BUCKET,
   })
 }
 
@@ -28,14 +31,15 @@ const runScratchPad = async () => {
   console.log("======= create test data ========")
 
   try {
-    const timestamp = Date.now().toString()
-    const res = await db
-      .collection("items")
-      .doc(timestamp)
-      .set({ name: "Item " + Math.ceil(Math.random() * 100000000) })
-      .then((result) => {
-        console.log("Successfully executed write at: ", result)
-      })
+    let emojis = []
+    const ref = db.collection("users")
+    const snapshot = await ref.get()
+    snapshot.forEach((doc) => {
+      if (doc.data().emoji) {
+        emojis.push(doc.data().emoji)
+      }
+    })
+    console.log({ emojis })
   } catch (err) {
     console.log("ERROR:", err)
     return false

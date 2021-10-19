@@ -1,7 +1,7 @@
 import withSession from "../../src/lib/session"
 import Wrapper from "../../src/layout/Wrapper"
 import App from "../../src/views/App"
-import appConfig from "../../app.config"
+import appConfig from "../../appConfig"
 
 const AppIndexPage = ({ user }) => (
   <Wrapper

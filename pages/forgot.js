@@ -1,7 +1,7 @@
 import React from "react"
 import Wrapper from "../src/layout/Wrapper"
 import ForgotPassword from "../src/views/auth/ForgotPassword"
-import appConfig from "../app.config.js"
+import appConfig from "../FIREBASE_STORAGE_BUCKET"
 
 const ForgotPage = () => {
   return (
